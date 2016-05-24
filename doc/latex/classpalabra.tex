@@ -1,0 +1,173 @@
+\hypertarget{classpalabra}{\section{Referencia de la Clase palabra}
+\label{classpalabra}\index{palabra@{palabra}}
+}
+
+
+T.\-D.\-A. Palabra.  
+
+
+
+
+{\ttfamily \#include $<$palabra.\-h$>$}
+
+\subsection*{Métodos públicos}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classpalabra_aa1f51124f5ada68f41a1579bc9216254}{palabra} ()
+\begin{DoxyCompactList}\small\item\em Constructor del T\-D\-A palabra. \end{DoxyCompactList}\item 
+\hyperlink{classpalabra_a890abfacbaca2b42bb9f49e3d3182f9a}{palabra} (const \hyperlink{classpalabra}{palabra} \&w)
+\begin{DoxyCompactList}\small\item\em Constructor de copia del T\-D\-A palabra. \end{DoxyCompactList}\item 
+void \hyperlink{classpalabra_a4ccd489a1acdc6b11f52611562ad4af4}{cargar} (const string d)
+\begin{DoxyCompactList}\small\item\em Cargar una palabra con información. \end{DoxyCompactList}\item 
+\hyperlink{classpalabra_ae4c8a87d7bfa6cebf5941d4938da661e}{$\sim$palabra} ()
+\begin{DoxyCompactList}\small\item\em Destructor del T\-D\-A Palabra. \end{DoxyCompactList}\item 
+string $\ast$ \hyperlink{classpalabra_acef4f5bd0630c89975775218daf913bd}{Terminos} ()
+\begin{DoxyCompactList}\small\item\em Devolución de terminos. \end{DoxyCompactList}\item 
+const int \hyperlink{classpalabra_a9b194a7cce2d3713fa278504f09aca9c}{Tamanio} ()
+\begin{DoxyCompactList}\small\item\em Tamaño de la palabra. \end{DoxyCompactList}\item 
+\hyperlink{classpalabra}{palabra} \& \hyperlink{classpalabra_a9e54ed0b6c965692b48f72b41dc2a5e7}{operator=} (const \hyperlink{classpalabra}{palabra} \&original)
+\begin{DoxyCompactList}\small\item\em Operador de asignación del T\-D\-A palabra. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Descripción detallada}
+T.\-D.\-A. Palabra. 
+
+Una instancia {\itshape w} del tipo de datos abstracto {\ttfamily palabra} es un objeto que representa un término en un idioma de partida y varias traducciones posibles de dicho término en otro idioma.
+
+\begin{DoxyAuthor}{Autor}
+Miguel Ángel Torres 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Fecha}
+Octubre 2015 
+\end{DoxyDate}
+
+
+Definición en la línea 23 del archivo palabra.\-h.
+
+
+
+\subsection{Documentación del constructor y destructor}
+\hypertarget{classpalabra_aa1f51124f5ada68f41a1579bc9216254}{\index{palabra@{palabra}!palabra@{palabra}}
+\index{palabra@{palabra}!palabra@{palabra}}
+\subsubsection[{palabra}]{\setlength{\rightskip}{0pt plus 5cm}palabra\-::palabra (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classpalabra_aa1f51124f5ada68f41a1579bc9216254}
+
+
+Constructor del T\-D\-A palabra. 
+
+\begin{DoxyReturn}{Devuelve}
+Crea un objeto de tipo palabra con sus campos vacios, luego es necesario cargar la palabra o el objeto estará vació. 
+\end{DoxyReturn}
+\hypertarget{classpalabra_a890abfacbaca2b42bb9f49e3d3182f9a}{\index{palabra@{palabra}!palabra@{palabra}}
+\index{palabra@{palabra}!palabra@{palabra}}
+\subsubsection[{palabra}]{\setlength{\rightskip}{0pt plus 5cm}palabra\-::palabra (
+\begin{DoxyParamCaption}
+\item[{const {\bf palabra} \&}]{w}
+\end{DoxyParamCaption}
+)}}\label{classpalabra_a890abfacbaca2b42bb9f49e3d3182f9a}
+
+
+Constructor de copia del T\-D\-A palabra. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em w} & Palabra que va a ser copiada \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+Devuelve una nueva palabra con una copia de los campos de w 
+\end{DoxyReturn}
+\hypertarget{classpalabra_ae4c8a87d7bfa6cebf5941d4938da661e}{\index{palabra@{palabra}!$\sim$palabra@{$\sim$palabra}}
+\index{$\sim$palabra@{$\sim$palabra}!palabra@{palabra}}
+\subsubsection[{$\sim$palabra}]{\setlength{\rightskip}{0pt plus 5cm}palabra\-::$\sim$palabra (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classpalabra_ae4c8a87d7bfa6cebf5941d4938da661e}
+
+
+Destructor del T\-D\-A Palabra. 
+
+\begin{DoxyReturn}{Devuelve}
+Destruye el objeto Palabra 
+\end{DoxyReturn}
+
+
+\subsection{Documentación de las funciones miembro}
+\hypertarget{classpalabra_a4ccd489a1acdc6b11f52611562ad4af4}{\index{palabra@{palabra}!cargar@{cargar}}
+\index{cargar@{cargar}!palabra@{palabra}}
+\subsubsection[{cargar}]{\setlength{\rightskip}{0pt plus 5cm}void palabra\-::cargar (
+\begin{DoxyParamCaption}
+\item[{const string}]{d}
+\end{DoxyParamCaption}
+)}}\label{classpalabra_a4ccd489a1acdc6b11f52611562ad4af4}
+
+
+Cargar una palabra con información. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em d} & Cadena de términos con un orden especifico \\
+\hline
+\end{DoxyParams}
+\begin{DoxyNote}{Nota}
+M\-I\-R\-E P\-R\-E\-C\-O\-N\-D\-I\-C\-I\-O\-N D\-E L\-A F\-U\-N\-C\-I\-O\-N 
+\end{DoxyNote}
+\begin{DoxyPrecond}{Precondición}
+La cadena deberá estar estructurada de la siguiente forma \-: palabra\-\_\-origen;traducción;traducción;traducción.... 
+\end{DoxyPrecond}
+\hypertarget{classpalabra_a9e54ed0b6c965692b48f72b41dc2a5e7}{\index{palabra@{palabra}!operator=@{operator=}}
+\index{operator=@{operator=}!palabra@{palabra}}
+\subsubsection[{operator=}]{\setlength{\rightskip}{0pt plus 5cm}{\bf palabra}\& palabra\-::operator= (
+\begin{DoxyParamCaption}
+\item[{const {\bf palabra} \&}]{original}
+\end{DoxyParamCaption}
+)}}\label{classpalabra_a9e54ed0b6c965692b48f72b41dc2a5e7}
+
+
+Operador de asignación del T\-D\-A palabra. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em original} & Palabra que va a ser copiada \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+Devuelve la nueva palabra para poder encadenar asignaciones 
+\end{DoxyReturn}
+\hypertarget{classpalabra_a9b194a7cce2d3713fa278504f09aca9c}{\index{palabra@{palabra}!Tamanio@{Tamanio}}
+\index{Tamanio@{Tamanio}!palabra@{palabra}}
+\subsubsection[{Tamanio}]{\setlength{\rightskip}{0pt plus 5cm}const int palabra\-::\-Tamanio (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classpalabra_a9b194a7cce2d3713fa278504f09aca9c}
+
+
+Tamaño de la palabra. 
+
+\begin{DoxyReturn}{Devuelve}
+Devuelve el número de términos de la palabra, contando tanto el término en el idioma origen como los términos de su traducción. 
+\end{DoxyReturn}
+\hypertarget{classpalabra_acef4f5bd0630c89975775218daf913bd}{\index{palabra@{palabra}!Terminos@{Terminos}}
+\index{Terminos@{Terminos}!palabra@{palabra}}
+\subsubsection[{Terminos}]{\setlength{\rightskip}{0pt plus 5cm}string$\ast$ palabra\-::\-Terminos (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classpalabra_acef4f5bd0630c89975775218daf913bd}
+
+
+Devolución de terminos. 
+
+\begin{DoxyReturn}{Devuelve}
+Devuelve un puntero a string que marca el inicio del vector de un término y sus traducciones. La primera posición del vector la ocupa el término en el idioma origen, las restantes son las traducciones del mismo. 
+\end{DoxyReturn}
+
+
+La documentación para esta clase fue generada a partir del siguiente fichero\-:\begin{DoxyCompactItemize}
+\item 
+include/\hyperlink{palabra_8h}{palabra.\-h}\end{DoxyCompactItemize}

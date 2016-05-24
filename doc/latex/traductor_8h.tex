@@ -1,0 +1,56 @@
+\hypertarget{traductor_8h}{\section{Referencia del Archivo include/traductor.h}
+\label{traductor_8h}\index{include/traductor.\-h@{include/traductor.\-h}}
+}
+
+
+Fichero cabecera del T\-D\-A Traductor.  
+
+
+{\ttfamily \#include $<$string$>$}\\*
+{\ttfamily \#include \char`\"{}palabra.\-h\char`\"{}}\\*
+\subsection*{Clases}
+\begin{DoxyCompactItemize}
+\item 
+class \hyperlink{classtraductor}{traductor}
+\begin{DoxyCompactList}\small\item\em T.\-D.\-A. Traductor. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Funciones}
+\begin{DoxyCompactItemize}
+\item 
+istream \& \hyperlink{traductor_8h_aa9bc39697cda076e62ed23bec55ea18e}{operator$>$$>$} (istream \&f, \hyperlink{classtraductor}{traductor} \&datos)
+\begin{DoxyCompactList}\small\item\em Cargar traductor a partir de un flujo de datos. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Descripción detallada}
+Fichero cabecera del T\-D\-A Traductor. 
+
+Definición en el archivo \hyperlink{traductor_8h_source}{traductor.\-h}.
+
+
+
+\subsection{Documentación de las funciones}
+\hypertarget{traductor_8h_aa9bc39697cda076e62ed23bec55ea18e}{\index{traductor.\-h@{traductor.\-h}!operator$>$$>$@{operator$>$$>$}}
+\index{operator$>$$>$@{operator$>$$>$}!traductor.h@{traductor.\-h}}
+\subsubsection[{operator$>$$>$}]{\setlength{\rightskip}{0pt plus 5cm}istream\& operator$>$$>$ (
+\begin{DoxyParamCaption}
+\item[{istream \&}]{f, }
+\item[{{\bf traductor} \&}]{datos}
+\end{DoxyParamCaption}
+)}}\label{traductor_8h_aa9bc39697cda076e62ed23bec55ea18e}
+
+
+Cargar traductor a partir de un flujo de datos. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em f} & Flujo desde el que se van a introducir las palabras \\
+\hline
+{\em datos} & Traductor al que se van a cargar las palabras. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+Devuelve el flujo para permitir encadenar varios flujos 
+\end{DoxyReturn}
+\begin{DoxyPrecond}{Precondición}
+En el flujo, las palabras deberán estar agrupadas de la siguiente forma \-: palabra\-\_\-origen;traducción;traducción;traducción....\par
+ E\-S I\-M\-P\-R\-E\-S\-C\-I\-N\-D\-I\-B\-L\-E Q\-U\-E E\-L D\-O\-C\-U\-M\-E\-N\-T\-O T\-E\-R\-M\-I\-N\-E C\-O\-N U\-N R\-E\-T\-O\-R\-N\-O D\-E C\-A\-R\-R\-O 
+\end{DoxyPrecond}

@@ -1,0 +1,135 @@
+  \hypertarget{index_intro_sec}{}\section{Introducción}\label{index_intro_sec}
+Este es un proyecto desarrollado con el fin de simplificar la búsqueda de traducciones de un idioma a otro. Esta pensado para un uso personal y permite la versatilidad que un cuaderno común no posee, ya que permite buscar palabras y sus posibles traducciones a otro idioma de manera rápida y sencilla.\hypertarget{index_use_sec}{}\section{Uso}\label{index_use_sec}
+\hypertarget{index_step1}{}\subsection{Paso 1\-: Creación de una libreta}\label{index_step1}
+Con el fin de almacenar tantas palabras con sus respectivas traducciones como sea posible, será necesario crear un fichero con la extension .txt que almacene las palabras con sus traducciones, debe tener el siguiente formato\-:
+
+
+\begin{DoxyCodeInclude}
+Adan;Adam;
+Alcoran;Koran;
+Alejandro;Alexander;
+Alemania;Germany;
+Alpes;Alps;
+Amberes;Antwerp;
+Amsterdam;Amsterdam;
+America;America;
+America del Sur;SouthAmerica;
+America meridional;SouthAmerica;
+America septentrional;NorthAmerica;
+Andalucia;Andalusia;
+Andorra;Andorra;
+Antillas;Antilles;
+Anunciacion;Annunciation;Lady Day;
+Apocalipsis;Apocalypse;
+Aquisgran;Aix‐la‐Chapelle;
+Arabia;Arabia;
+Argel;Algiers;
+Argentina;Argentina;
+Arizona;Arizona;
+Aruba;Aruba;
+Ascension;AscensionDay;
+Asia;Asia;
+Asia Menor;AsiaMinor;
+Asturias;Asturias;
+Atenas;Athens;
+Australia;Australia;
+Austria;Austria;
+Balkanes;Balkans;
+Barcelona;Barcelona;
+Bengala;Bengal;
+Berlin;Berlin;
+Biblia;Bible;
+Blanca‐Nieve;Little Snow White;
+Bolivia;Bolivia;
+Brasil;Brazil;
+Bruselas;Brussels;
+Bulgaria;Bulgaria;
+Burdeos;Bordeaux;
+Baltico;BalticSea;
+Belgica;Belgium;
+Canada;Canada;
+Candelaria;Candlemas;
+Castilla;Castile;
+Cataluna;Catalonia;
+Cenicienta;Cinderella;
+Cenopegias;Feast of Tabernacles;
+Cerdena;Sardinia;Sardina;
+Checoeslovaquia;Czechoslovakia;
+Chile;Chile;
+China;China;
+Colombia;Colombia;
+Colonia;Cologne;
+Colon;Columbus;
+Costa Brava;Costa Brava;
+Costa Rica;Costa Rica;
+Creta;Crete;
+Cristo;Christ;
+Cruz Roja;Red Cross;
+Cuba;Cuba;
+Curazao;Curaçao;
+Caucaso;Caucasus;
+Corcega;Corsica;
+Cordoba;Cordova;
+Dinamarca;Denmark;
+Dios;God;
+Ecuador;Ecuador;
+Egipto;Egypt;
+El Salvador;El Salvador;
+Escalda;Scheldt;
+Escandinavia;Scandinavia;
+Escocia;Scotland;
+Espana;Spain;
+Estados Unidos;United States of America;USA;
+Estonia;Estonia;
+
+\end{DoxyCodeInclude}
+ S\-I\-E\-N\-D\-O E\-L Ú\-L\-T\-I\-M\-O \par
+ I\-M\-P\-R\-E\-S\-C\-I\-N\-D\-I\-B\-L\-E P\-A\-R\-A Q\-U\-E E\-L P\-R\-O\-G\-R\-A\-M\-A F\-U\-N\-C\-I\-O\-N\-E C\-O\-R\-R\-E\-C\-T\-A\-M\-E\-N\-T\-E\hypertarget{index_step2}{}\subsection{Paso 2\-: Búsqueda de traducciones}\label{index_step2}
+Una vez creado el fichero libreta, solo será necesario cargarla tal y como se muestra en el ejecutable de prueba que viene al final de este paso. Ahora cuando hayas aprendido muchas palabras en un idioma y no te acuerdes de una en concreto, no será necesario recorrer una y otra vez tu libreta buscandola, basta con ejecutar tu programa y escribir la palabra deseada.
+
+
+\begin{DoxyCodeInclude}
+\textcolor{preprocessor}{#include "\hyperlink{traductor_8h}{traductor.h}"}
+\textcolor{preprocessor}{#include "\hyperlink{palabra_8h}{palabra.h}"}
+\textcolor{preprocessor}{#include <fstream>}
+\textcolor{preprocessor}{#include <iostream>}
+\textcolor{keyword}{using namespace }std;
+\textcolor{keywordtype}{int} main(\textcolor{keywordtype}{int} argc, \textcolor{keywordtype}{char} * argv[])\{
+
+  \textcolor{keywordflow}{if} (argc!=2)\{
+      cout<<\textcolor{stringliteral}{"Dime el nombre del fichero con las traducciones"}<<endl;
+      \textcolor{keywordflow}{return} 0;
+   \}
+
+   ifstream f (argv[1]);
+   \textcolor{keywordflow}{if} (!f)\{
+    cout<<\textcolor{stringliteral}{"No puedo abrir el fichero "}<<argv[1]<<endl;
+    \textcolor{keywordflow}{return} 0;
+   \}
+   cout << \textcolor{stringliteral}{"voy a crear traductor"}<< endl ;
+   \hyperlink{classtraductor}{traductor} T;
+   cout << \textcolor{stringliteral}{"voy a cargar el traductor"}<< endl ;
+   f>>T; \textcolor{comment}{//Cargamos en memoria, en el traductor.}
+   
+   \textcolor{keywordtype}{string} a;
+   cout<<\textcolor{stringliteral}{"Dime una palabra en el idioma origen:"};
+   getline(cin,a);
+   
+   \textcolor{keywordtype}{int} nacep=0;
+  \textcolor{keywordtype}{string}* trads=T.GetTraduccion(a,nacep);
+   
+   
+   \textcolor{comment}{/* Escrbimos*/}
+   cout<<a<<\textcolor{stringliteral}{"-->"};
+   \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i=0;i<nacep; ++i)
+     cout<<trads[i]<<\textcolor{charliteral}{';'};
+   cout<<endl;
+   
+   
+   
+
+
+
+\}
+\end{DoxyCodeInclude}
+ 

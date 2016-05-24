@@ -1,0 +1,225 @@
+\hypertarget{classtraductor}{\section{Referencia de la Clase traductor}
+\label{classtraductor}\index{traductor@{traductor}}
+}
+
+
+T.\-D.\-A. Traductor.  
+
+
+
+
+{\ttfamily \#include $<$traductor.\-h$>$}
+
+\subsection*{Métodos públicos}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classtraductor_ab99562aebb0a518d6e9298bfa9dbadac}{traductor} ()
+\begin{DoxyCompactList}\small\item\em Constructor por defecto de la clase. \end{DoxyCompactList}\item 
+\hyperlink{classtraductor_a9d3bb37c205eb04dc6f7a0ef6e2d5aa9}{$\sim$traductor} ()
+\begin{DoxyCompactList}\small\item\em Destructor de la clase. \end{DoxyCompactList}\item 
+\hyperlink{classtraductor_af936ed17ec673c1d48812feaea06eb46}{traductor} (const \hyperlink{classtraductor}{traductor} \&orig)
+\begin{DoxyCompactList}\small\item\em Constructor de copia de la clase. \end{DoxyCompactList}\item 
+int \hyperlink{classtraductor_a0c07b08c93bd8b8f408716afb6dc0782}{Tamanio} () const 
+\begin{DoxyCompactList}\small\item\em Número de palabras del traductor. \end{DoxyCompactList}\item 
+\hyperlink{classtraductor}{traductor} \& \hyperlink{classtraductor_ad93a9e15d6ac047bfd2cd5f7f1754d45}{operator=} (const \hyperlink{classtraductor}{traductor} \&trad)
+\begin{DoxyCompactList}\small\item\em Operador de asignación de la clase. \end{DoxyCompactList}\item 
+void \hyperlink{classtraductor_a7720fe5824d82064b1479ffcc761020e}{Aniade} (\hyperlink{classpalabra}{palabra} w)
+\begin{DoxyCompactList}\small\item\em Añade palabras a Traductor. \end{DoxyCompactList}\item 
+string $\ast$ \hyperlink{classtraductor_a62c1d8dde134e9122c7172fa6f611e13}{Get\-Traduccion} (string busqueda, int \&nacep)
+\begin{DoxyCompactList}\small\item\em Busca las traducciones. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Descripción detallada}
+T.\-D.\-A. Traductor. 
+
+Una instancia {\itshape T} del tipo de datos abstracto {\ttfamily traductor} es un objeto que representa un conjunto de palabras en un idioma concreto y sus posibles traducciones.
+
+Un ejemplo de su uso\-: 
+\begin{DoxyCodeInclude}
+\textcolor{preprocessor}{#include "\hyperlink{traductor_8h}{traductor.h}"}
+\textcolor{preprocessor}{#include "\hyperlink{palabra_8h}{palabra.h}"}
+\textcolor{preprocessor}{#include <fstream>}
+\textcolor{preprocessor}{#include <iostream>}
+\textcolor{keyword}{using namespace }std;
+\textcolor{keywordtype}{int} main(\textcolor{keywordtype}{int} argc, \textcolor{keywordtype}{char} * argv[])\{
+
+  \textcolor{keywordflow}{if} (argc!=2)\{
+      cout<<\textcolor{stringliteral}{"Dime el nombre del fichero con las traducciones"}<<endl;
+      \textcolor{keywordflow}{return} 0;
+   \}
+
+   ifstream f (argv[1]);
+   \textcolor{keywordflow}{if} (!f)\{
+    cout<<\textcolor{stringliteral}{"No puedo abrir el fichero "}<<argv[1]<<endl;
+    \textcolor{keywordflow}{return} 0;
+   \}
+   cout << \textcolor{stringliteral}{"voy a crear traductor"}<< endl ;
+   \hyperlink{classtraductor}{traductor} T;
+   cout << \textcolor{stringliteral}{"voy a cargar el traductor"}<< endl ;
+   f>>T; \textcolor{comment}{//Cargamos en memoria, en el traductor.}
+   
+   \textcolor{keywordtype}{string} a;
+   cout<<\textcolor{stringliteral}{"Dime una palabra en el idioma origen:"};
+   getline(cin,a);
+   
+   \textcolor{keywordtype}{int} nacep=0;
+  \textcolor{keywordtype}{string}* trads=T.GetTraduccion(a,nacep);
+   
+   
+   \textcolor{comment}{/* Escrbimos*/}
+   cout<<a<<\textcolor{stringliteral}{"-->"};
+   \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i=0;i<nacep; ++i)
+     cout<<trads[i]<<\textcolor{charliteral}{';'};
+   cout<<endl;
+   
+   
+   
+
+
+
+\}
+\end{DoxyCodeInclude}
+
+
+\begin{DoxyAuthor}{Autor}
+Miguel Ángel Torres 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Fecha}
+Octubre 2015 
+\end{DoxyDate}
+
+
+Definición en la línea 56 del archivo traductor.\-h.
+
+
+
+\subsection{Documentación del constructor y destructor}
+\hypertarget{classtraductor_ab99562aebb0a518d6e9298bfa9dbadac}{\index{traductor@{traductor}!traductor@{traductor}}
+\index{traductor@{traductor}!traductor@{traductor}}
+\subsubsection[{traductor}]{\setlength{\rightskip}{0pt plus 5cm}traductor\-::traductor (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classtraductor_ab99562aebb0a518d6e9298bfa9dbadac}
+
+
+Constructor por defecto de la clase. 
+
+\begin{DoxyReturn}{Devuelve}
+Crea un objeto traductor con ninguna defenición. Es necesario usar el operador $>$$>$ para cargar definiciones. 
+\end{DoxyReturn}
+\hypertarget{classtraductor_a9d3bb37c205eb04dc6f7a0ef6e2d5aa9}{\index{traductor@{traductor}!$\sim$traductor@{$\sim$traductor}}
+\index{$\sim$traductor@{$\sim$traductor}!traductor@{traductor}}
+\subsubsection[{$\sim$traductor}]{\setlength{\rightskip}{0pt plus 5cm}traductor\-::$\sim$traductor (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classtraductor_a9d3bb37c205eb04dc6f7a0ef6e2d5aa9}
+
+
+Destructor de la clase. 
+
+\begin{DoxyReturn}{Devuelve}
+Destruye el objeto traductor 
+\end{DoxyReturn}
+\hypertarget{classtraductor_af936ed17ec673c1d48812feaea06eb46}{\index{traductor@{traductor}!traductor@{traductor}}
+\index{traductor@{traductor}!traductor@{traductor}}
+\subsubsection[{traductor}]{\setlength{\rightskip}{0pt plus 5cm}traductor\-::traductor (
+\begin{DoxyParamCaption}
+\item[{const {\bf traductor} \&}]{orig}
+\end{DoxyParamCaption}
+)}}\label{classtraductor_af936ed17ec673c1d48812feaea06eb46}
+
+
+Constructor de copia de la clase. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em orig} & Traductor que se va a copiar para construir el nuevo objeto \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+Crea un traductor con las mismas palabras que orig 
+\end{DoxyReturn}
+
+
+\subsection{Documentación de las funciones miembro}
+\hypertarget{classtraductor_a7720fe5824d82064b1479ffcc761020e}{\index{traductor@{traductor}!Aniade@{Aniade}}
+\index{Aniade@{Aniade}!traductor@{traductor}}
+\subsubsection[{Aniade}]{\setlength{\rightskip}{0pt plus 5cm}void traductor\-::\-Aniade (
+\begin{DoxyParamCaption}
+\item[{{\bf palabra}}]{w}
+\end{DoxyParamCaption}
+)}}\label{classtraductor_a7720fe5824d82064b1479ffcc761020e}
+
+
+Añade palabras a Traductor. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em w} & objeto del T\-D\-A palabra que se va a adherir a traductor \\
+\hline
+\end{DoxyParams}
+\hypertarget{classtraductor_a62c1d8dde134e9122c7172fa6f611e13}{\index{traductor@{traductor}!Get\-Traduccion@{Get\-Traduccion}}
+\index{Get\-Traduccion@{Get\-Traduccion}!traductor@{traductor}}
+\subsubsection[{Get\-Traduccion}]{\setlength{\rightskip}{0pt plus 5cm}string$\ast$ traductor\-::\-Get\-Traduccion (
+\begin{DoxyParamCaption}
+\item[{string}]{busqueda, }
+\item[{int \&}]{nacep}
+\end{DoxyParamCaption}
+)}}\label{classtraductor_a62c1d8dde134e9122c7172fa6f611e13}
+
+
+Busca las traducciones. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em busqueda} & Palabra que se va a intentar traducir \\
+\hline
+{\em nacep} & Número de traducciones encontradas para busqueda \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+Devuelve un puntero a string con el vector formado por la palabra buscada (0) y las traducciones (1-\/nacep) 
+\end{DoxyReturn}
+\begin{DoxyPrecond}{Precondición}
+nacep es un parametro pasado por referencia, se perderá su valor para dar el número de traduccioens de busqueda 
+\end{DoxyPrecond}
+\hypertarget{classtraductor_ad93a9e15d6ac047bfd2cd5f7f1754d45}{\index{traductor@{traductor}!operator=@{operator=}}
+\index{operator=@{operator=}!traductor@{traductor}}
+\subsubsection[{operator=}]{\setlength{\rightskip}{0pt plus 5cm}{\bf traductor}\& traductor\-::operator= (
+\begin{DoxyParamCaption}
+\item[{const {\bf traductor} \&}]{trad}
+\end{DoxyParamCaption}
+)}}\label{classtraductor_ad93a9e15d6ac047bfd2cd5f7f1754d45}
+
+
+Operador de asignación de la clase. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em trad} & Traductor que se va a asignar. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+Convierte el traductor en una copia de trad 
+\end{DoxyReturn}
+\hypertarget{classtraductor_a0c07b08c93bd8b8f408716afb6dc0782}{\index{traductor@{traductor}!Tamanio@{Tamanio}}
+\index{Tamanio@{Tamanio}!traductor@{traductor}}
+\subsubsection[{Tamanio}]{\setlength{\rightskip}{0pt plus 5cm}int traductor\-::\-Tamanio (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classtraductor_a0c07b08c93bd8b8f408716afb6dc0782}
+
+
+Número de palabras del traductor. 
+
+\begin{DoxyReturn}{Devuelve}
+Devuelve el número total de palabras que contiene el traductor en la actualidad 
+\end{DoxyReturn}
+
+
+La documentación para esta clase fue generada a partir del siguiente fichero\-:\begin{DoxyCompactItemize}
+\item 
+include/\hyperlink{traductor_8h}{traductor.\-h}\end{DoxyCompactItemize}
